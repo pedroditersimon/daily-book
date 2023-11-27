@@ -1,0 +1,21 @@
+<div class="note_div" onclick="redirectTo('/notes/edit/{{note_id}}')">
+    
+    <div class="note_topbar">
+        <div class="note_tittle">{{tittle}}</div>
+    
+        <div class="note_tags">{{tags}}</div>
+    </div>
+
+    <div class="note_description">{{description}}</div>
+</div>
+
+
+<script>
+    function submitForm(id) {
+        document.getElementById(id).submit();
+    }
+
+    function redirectTo(href) {
+        window.location.assign(href);
+    }
+</script>

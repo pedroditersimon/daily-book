@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vesper+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+
+:root {
+    --primary-color: #4B636E;         /* Azul verdoso oscuro ajustado */
+    --primary-color-light: #82939E;   /* Azul verdoso claro ajustado */
+    
+    --secondary-color: #8C8F89;       /* Gris verdoso ajustado */
+    --secondary-color-light: #C2C4BF;  /* Gris verdoso claro */
+    
+    --primary-text-color: #333333;       /* Texto principal - Negro suave */
+    --secondary-text-color: #666666;     /* Texto secundario - Gris suave */
+    
+    --accept-color: #4CAF50;          /* Verde para resaltar el botón */
+    --accept-color-light: #66BB6A;    /* Verde más claro para resaltar el botón */
+    --accept-text-color: #FFFFFF;     /* Texto blanco para resaltar el botón */
+
+    --caution-color: #B03A2E;            /* Rojo suave */
+    --caution-color-light: #D9534F;      /* Rojo más claro */
+    --caution-text-color: #FFFFFF;        /* Texto en colores de advertencia - Blanco */
+    
+    --background-color: #F2F2F2;         /* Gris claro para el fondo */
+    
+    --note-primary-color: #3B4D56;     /* Azul verdoso más vibrante para notas */
+    --note-primary-color-light: #5E7481; 
+
+    /* fonts */
+    --text-font: "Poppins";
+    --note-tittle-font: "Baloo da 2";
+    --note-tags-font: "Baloo da 2";
+    --note-description-font: "Nunito";
+}
+
+body{
+    background-color: #153a5f;
+}
+
+
+.horizontal_line {
+    width: 80%;
+    height: 0.5vh;
+
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 2vh auto;
+}

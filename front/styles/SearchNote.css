@@ -1,0 +1,222 @@
+.search_div {
+    background-color: var(--background-color);
+    border-radius: 5px;
+
+    margin: 0 1vw;
+    padding-bottom: 0.5vh;
+}
+
+#search_form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2vh 2vw 2vh;
+}
+
+input {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 1);
+    font-family: var(--text-font);
+
+    outline: unset;
+    border: unset;
+
+    width: auto;
+    max-width: 80%;
+
+    margin: 1vh 0.5vw;
+
+    padding: 1vh 0 1vh 1vw;
+    border-radius: 5px;
+}
+input:hover{
+    background-color: var(--primary-color-light);
+}
+input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    background-color: var(--primary-color);
+    color:rgba(255, 255, 255, 1);
+    font-family: var(--text-font);
+
+    outline: unset;
+    border: unset;
+
+    margin: 1vh 0.5vw;
+
+    padding: 1vh 1vw;
+
+    border-radius: 5px;
+    vertical-align: middle;
+}
+button:hover{
+    cursor: pointer;
+    background-color: var(--primary-color-light);
+}
+
+
+/* new note button */
+.new_note {
+    background-color: var(--accept-color);
+    color: var(--accept-text-color);
+}
+.new_note:hover{
+    cursor: pointer;
+    background-color: var(--accept-color-light);
+}
+
+
+.notes_result {
+    margin-top: 4vh;
+}
+
+.group_notes {
+    margin: 0vh auto 5vh;
+    position: relative;
+}
+
+.group_divisor_line {
+    background-color: var(--primary-color);
+
+    width: 80%;
+    margin: auto;
+    height: 0.5vh;
+    border-radius: 2px;
+}
+
+.group_text {
+    background-color: var(--background-color);
+    position: absolute;
+
+    padding: 0 0.4vw;
+    margin-left: 12vw;
+
+    transform: translateY(-50%);
+
+    font-family: "Poppins";
+    font-size: smaller; 
+}
+
+.group_notes_elements {
+    margin-top: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.note_div {
+    border-radius: 5px;
+
+    width: 30%;
+    margin: 2.5vh auto;
+
+    padding-bottom: 0.5vh;
+    background-color: var(--note-primary-color);
+}
+
+.note_div:hover {
+    background-color: var(--note-primary-color-light);
+    cursor: pointer;
+}
+
+.note_topbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 1.5vh 1vw;
+
+    display: flex;
+    align-items: center;
+    height: 4vh;
+}
+
+.note_tittle, .note_tags {
+    border-radius: 5px;
+    display: inline;
+
+    color: rgba(255, 255, 255, 1);
+
+    font-family: var(--note-tittle-font);
+    font-size: large;
+}
+
+.note_tags {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.5vh 0.5vw;
+
+    font-family: var(--note-tags-font);
+    font-size: small;
+
+    color: rgba(255, 255, 255, 0.8);
+    display: block; /* Hace que el enlace sea un bloque para aplicar altura máxima y ellipsis */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta cualquier exceso de texto */
+    text-overflow: ellipsis;
+    min-height: 50%;
+    max-width: 40%;
+
+    margin-left: auto;
+}
+
+
+.note_description {
+    margin: 2vh 2vw;
+
+    font-family: var(--note-description-font);
+    font-size: small;
+
+    color: rgba(255, 255, 255, 1);
+
+    display: block; /* Hace que el enlace sea un bloque para aplicar altura máxima y ellipsis */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta cualquier exceso de texto */
+    text-overflow: ellipsis;
+}
+
+
+
+@media (max-width: 600px) {
+
+    #search_form {
+        padding: 2vh 5vw 2vh;
+    }
+
+    .group_notes {
+        margin: 0vh auto 3vh;
+    }
+
+    .group_divisor_line {
+        width: 75%;
+    }
+    .group_text {
+        padding: 0 1.5vw;
+        margin-left: 16vw;
+    }
+
+    .note_div{    
+        margin: 2.5vh 4vw 5vh;
+        width: 40%;
+    }
+
+    .note_topbar {
+        padding: 1.5vh 3vw;
+    }
+
+    .note_tags {
+        padding: 0.5vh 1.5vw;
+    }
+
+    .note_description {
+        margin: 2vh 6vw;
+    }
+
+    input {
+        padding: 1vh 0 1vh 2vw;
+    }
+
+    button {
+        padding: 1vh 2vw;
+    }
+}

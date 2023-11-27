@@ -1,0 +1,132 @@
+
+.note_div {
+    background-color: var(--note-primary-color);
+    border-radius: 5px;
+
+    margin: 0 1vw;
+    padding-bottom: 0.1vh;
+}
+
+
+.note_topbar {
+    background-color:  rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2vh 2vw 2vh;
+}
+
+input {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 1);
+    font-family: var(--text-font);
+
+    outline: unset;
+    border: unset;
+
+    margin: 1vh 0.5vw;
+
+    padding: 1vh 0 1vh 1vw;
+    border-radius: 5px;
+}
+
+input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+input:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: unset;
+    border: unset;
+}
+
+
+button {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: var(--primary-text-color);
+    font-family: var(--text-font);
+
+    outline: unset;
+    border: unset;
+
+    margin: 1vh 0.5vw;
+
+    padding: 1vh 1vw;
+
+    border-radius: 5px;
+    vertical-align: middle;
+}
+button:hover{
+    cursor: pointer;
+    background-color:  rgba(255, 255, 255, 0.8);
+}
+
+#save_note {
+    background-color: var(--accept-color);
+    color: var(--accept-text-color);
+}
+
+/* delete note button */
+#delete_note {
+    background-color: var(--caution-color);
+    color: var(--caution-text-color);
+}
+#delete_note:hover {
+    background-color:  var(--caution-color-light);
+}
+
+
+#note_description {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    
+    margin: 2vh 1vw;
+    padding: 1vh 1vw;
+}
+#note_description:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#note_description textarea {
+    color: rgba(255, 255, 255, 1);
+    font-family: var(--note-description-font);
+    font-size: medium;
+
+    width: 100%;
+
+    background-color: unset;
+    border: unset;
+    resize: none;
+    overflow-y: hidden;
+}
+#note_description textarea:focus {
+    outline: unset;
+}
+#note_description textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+    .note_topbar {
+        padding: 2vh 5vw 2vh;
+    }
+
+    #note_tittle, #note_tags {
+        padding: 1vh 0 1vh 2vw;
+    }
+
+    #note_tags {
+        margin-right: 1vw;
+        padding: 1vh 0 1vh 2vw;
+    }
+
+    button {
+        padding: 1vh 2vw;
+    }
+
+    #note_description {
+        margin: 2vh 2vw;
+        padding: 1.5vh 3vw;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/Common.css">
+    <link rel="stylesheet" href="/styles/EditNote.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="page_view">
+
+        <div class="note_div">
+            <form id="note_form" action="/notes/edit/" method="post">
+                <input type="text" name="noteID" value="{{note_id}}" style="display: none;">
+    
+                <div class="note_topbar">
+                    <input id="note_tittle" placeholder="Titulo" type="text" name="tittle" value="{{tittle}}">
+                    <input id="note_tags" name="tags" placeholder="Etiquetas" type="text" value="{{tags}}">
+                    <input id="note_date" name="associatedDate" type="date" value="{{associatedDate}}">
+                    <div style="margin: 0 0.5vw;"></div>
+                    
+                    <div style="display: inline-block;">
+                        <button id="save_note" onclick="submitForm('note_form')">Guardar</button>
+                        <button class="cancel_note" onclick="redirectTo('/notes/search')" type="button">Volver</button>
+                        <button id="delete_note" class="" onclick="doubleConfirmSubmitForm('delete_note_form', this)" type="button">Borrar</button>    
+                    </div>
+                </div>
+                
+                <div id="note_description">
+                    <textarea id="note_description_textarea" placeholder="Description..." name="description">{{description}}</textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <form id="delete_note_form" action="/notes/delete/" method="post">
+        <input type="text" name="noteID" value="{{note_id}}" style="display: none;">
+    </form>
+
+
+
+    <script>
+        function redirectTo(href) {
+            window.location.assign(href);
+        }
+
+        function submitForm(id) {
+            document.getElementById(id).submit();
+        }
+
+        function doubleConfirmSubmitForm(id, element) {
+            // double confirmed
+            if (element.className.includes("confirmed")) {
+                submitForm(id);
+                element.className = "";
+                return;
+            }
+
+            // show confirmation state
+            element.className = "confirmed";
+            element.innerHTML = "Confirmar Borrar";
+            
+            // get back to normal state in x seconds
+            setTimeout(() => {
+                element.className = "";
+                element.innerHTML = "Borrar";
+            }, 5000);
+        }
+
+        function resizeWidth(element) {
+            element.style.width = "auto";
+            element.style.width = (element.scrollWidth) + 'px';
+        }
+
+        function resizeHeigth(element) {
+            element.style.height = "auto";
+            element.style.height = (element.scrollHeight) + 'px';
+        }
+
+        var description_input = document.getElementById('note_description_textarea');
+        resizeHeigth(description_input);
+
+        description_input.addEventListener('input', function() {
+            resizeHeigth(this);
+        });
+
+
+        var tittle_input = document.getElementById('note_tittle');
+        resizeWidth(tittle_input);
+
+        tittle_input.addEventListener('input', function () {
+            resizeWidth(this);
+        });
+
+        var tags_input = document.getElementById('note_tags');
+        resizeWidth(tags_input);
+
+        tags_input.addEventListener('input', function () {
+            resizeWidth(this);
+        });
+    </script>
+</body>
+</html>

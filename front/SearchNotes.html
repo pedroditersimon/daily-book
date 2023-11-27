@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/Common.css">
+    <link rel="stylesheet" href="/styles/SearchNote.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="page_view">
+        <div class="search_div">
+
+            <form id="search_form" action="/notes/search/" method="get">
+                <input id="note_tittle" placeholder="Titulo" type="text" name="tittle">
+                <input id="note_tags" name="tags" placeholder="Etiquetas" type="text" >
+                <input id="note_date" name="associatedDate" type="date" value="{{associatedDate}}">
+                <div style="margin: 0 0.5vw;"></div>
+                
+                <div style="display: inline-block;">
+                    <button type="submit">Buscar</button>
+                    <button class="new_note" onclick="redirectTo('/notes/edit')" type="button">Crear</button>    
+                </div>
+            </form>
+
+            <div class="notes_result">
+                {{note_list_elements}}
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script>
+        // Obtener los parámetros de la URL y prellenar el search_form
+        document.addEventListener('DOMContentLoaded', function() {
+            const search_form = document.getElementById('search_form');
+            const params = new URLSearchParams(window.location.search);
+        
+            // Obtener valores de la URL y establecerlos en el search_form
+            search_form.tittle.value = params.get('tittle') || '';
+            search_form.tags.value = params.get('tags') || '';
+            search_form.associatedDate.value = params.get('associatedDate') || '';
+        });
+
+        function redirectTo(href) {
+            window.location.assign(href);
+        }
+    </script>
+</body>
+</html>

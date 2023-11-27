@@ -1,0 +1,45 @@
+
+.div_sign {
+    background-color: var(--background-color);
+    font-family: var(--text-font);
+    font-size: small;
+
+    border-radius: 10px;
+    width: 20vw;
+    padding: 3vh 2vw;
+
+    margin: 5vh auto;
+}
+.div_sign > h1 {
+    text-align: center;
+}
+
+
+.redirect_button {
+    background-color: var(--primary-color);
+    color:rgba(255, 255, 255, 1);
+    font-family: var(--text-font);
+
+    display: block;
+    width: 3vw;
+    text-align: center;
+
+    margin: auto;
+    padding: 1vh 1vw;
+    border-radius: 5px;
+}
+.redirect_button:hover{
+    cursor: pointer;
+    background-color: var(--primary-color-light);
+}
+
+
+@media (max-width: 800px) {
+    .div_sign {
+        width: 50vw;
+    }
+
+    .redirect_button {
+        width: 10vw;
+    }
+}
