@@ -66,7 +66,10 @@ class Controller {
     dbHandler;
 
     constructor() {
-        this.dbHandler = new DatabaseHandler({databaseName:"DailyBook"});
+        this.dbHandler = new DatabaseHandler({
+            URI: `mongodb+srv://daily-book-cluster:${process.env.DB_PASS}@dailybookcluster.ecfpy6n.mongodb.net/?retryWrites=true&w=majority`,
+            databaseName: "DailyBook"
+        });
     }
 
     async getNotes(query, options, sort, maxCount=100) {

@@ -15,10 +15,9 @@ import bodyParser from 'body-parser';
 const { urlencoded } = bodyParser;
 app.use(urlencoded({ extended: true }));
 
-
 //const host = "127.0.0.1";
-const host = "192.168.100.12";
-const port = 3000;
+//const host = "192.168.100.12";
+const port = process.env.PORT || 3000;
 
 // Requiring fs module to read files
 import { readFile } from 'fs/promises';
@@ -67,8 +66,8 @@ function getDayName(dateString) {
 }
 
 
-app.listen(port, host, () => {
-    console.log(`Server started! http://${host}:${port}`);
+app.listen(port, () => {
+    //console.log(`Server started! http://${host}:${port}`);
 });
 
 // note home page
