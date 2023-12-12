@@ -67,7 +67,7 @@ class Controller {
 
     constructor() {
         this.dbHandler = new DatabaseHandler({
-            URI: `mongodb+srv://daily-book-cluster:${process.env.DB_PASS}@dailybookcluster.ecfpy6n.mongodb.net/?retryWrites=true&w=majority`,
+            URI: `mongodb+srv://daily-book:${process.env.DB_PASS}@cluster0.rqsoktf.mongodb.net/?retryWrites=true&w=majority`,
             databaseName: "DailyBook"
         });
     }
