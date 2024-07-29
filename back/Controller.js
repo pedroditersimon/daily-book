@@ -66,10 +66,11 @@ class Controller {
     dbHandler;
 
     constructor() {
-        this.dbHandler = new DatabaseHandler({
-            URI: `mongodb+srv://daily-book:${process.env.DB_PASS}@cluster0.rqsoktf.mongodb.net/?retryWrites=true&w=majority`,
-            databaseName: "DailyBook"
-        });
+        const uri = process.env.MONGODB_URI;
+        uri.replace("<user>", process.env.MONGODB_USER);
+        uri.replace("<password>", process.env.MONGODB_USER_PASS);
+
+        this.dbHandler = new DatabaseHandler({ URI: uri, databaseName: "DailyBook" });
     }
 
     async getNotes(query, options, sort, maxCount=100) {

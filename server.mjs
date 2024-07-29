@@ -65,9 +65,10 @@ function getDayName(dateString) {
     return days[d.getDay()];
 }
 
-
-app.listen(port, () => {
-    //console.log(`Server started! http://${host}:${port}`);
+// note home page
+app.get("/", (req, res) => {
+    res.statusCode = 200;
+    res.redirect("/notes/search");
 });
 
 // note home page
@@ -206,4 +207,9 @@ app.post("/notes/delete", async (req, res) => {
     const noteResult = await controller.deleteNote(req.body.noteID);
 
     res.redirect("/notes/search/");
+});
+
+
+app.listen(port, () => {
+    //console.log(`Server started! http://${host}:${port}`);
 });
