@@ -1,1 +1,52 @@
+# Dependencias
+node_modules/
+
+# Archivos de configuración de npm
+package-lock.json
+npm-debug.log
+yarn-error.log
+
+# Archivos de configuración de Yarn
+.yarn-integrity
+.yarn/
+
+# Archivos generados por el compilador
+dist/
+build/
+
+# Archivos y carpetas de editor/IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+
+# Archivos temporales y de caché
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de Docker
+docker-compose.override.yml
+
+# Configuración de ambientes
 .env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Archivos generados por procesos de CI/CD
+*.out
+*.pid
+
+# Otros archivos potencialmente sensibles
+*.pem
+*.key
+*.crt

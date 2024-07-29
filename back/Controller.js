@@ -66,9 +66,9 @@ class Controller {
     dbHandler;
 
     constructor() {
-        const uri = process.env.MONGODB_URI;
-        uri.replace("<user>", process.env.MONGODB_USER);
-        uri.replace("<password>", process.env.MONGODB_USER_PASS);
+        const uri = process.env.MONGODB_URI
+            .replace("<user>", process.env.MONGODB_USER)
+            .replace("<password>", process.env.MONGODB_USER_PASS);
 
         this.dbHandler = new DatabaseHandler({ URI: uri, databaseName: "DailyBook" });
     }
